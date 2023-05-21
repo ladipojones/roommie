@@ -1,0 +1,197 @@
+<!--
+Page:
+	Home
+Path:
+	/index.html
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="Description" content="Welcome to the unofficial Verita University roommate finder application! Find a dorm roommate out of other registered Veritas students through a set of profile questions.">
+
+		<title>RoommateFinder - Unofficial Veritas Roommate Finder application</title>
+
+		<link rel="icon" href="/assets/VUNA LOGO.jpg" type="image/x-icon">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+
+		<link rel="stylesheet" href="/styles/bootstrap.min.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<link rel="stylesheet" href="/styles/index.css">
+        <link rel="stylesheet" href="/styles/style.css">
+	</head>
+
+	<body>
+		<main class="" id="main">
+            <img src="/assets/background.jpg" class="img splash" alt="main background image"></img>
+
+            <section class="txt splash">
+                <p class="title" href="/">
+                  <img src="/assets/RFA (2).png" src="site logo" height="100">
+                </p>
+                <p class="title">Veritas University RoommateFinder</p>
+                <p class="subtitle">Welcome to the unofficial Veritas University roommate finder application</p>
+            </section>
+
+            <section class="scroll splash">
+                <p class="mb-2 no-auth">Login or sign up to get started</p>
+                <p class="mb-3 auth-only d-none">Go to your Dashboard to update your profile or see current matches</p>
+                <span>
+                    <span class="no-auth">
+                        <button class="btn btn-lg btn-purple px-5 mx-2 mb-2 login-btn">
+                            Log In
+                        </button>
+                        <button class="btn btn-lg btn-purple px-5 mx-2 mb-2" id="signupBtn">
+                            Sign Up
+                        </button>
+                    </span>
+                    <span class="auth-only d-none">
+                        <a class="btn btn-lg btn-purple px-5 mx-2 mb-2" href="/dashboard.html">
+                            Dashboard
+                        </a>
+                        <button class="btn btn-lg btn-danger px-5 mx-2 logout-btn mb-2">
+                            Log Out
+                        </button>
+                    </span>
+                </span>
+                <p class="d-none text-danger" id="warnMsg"></p>
+            </section>
+
+            <nav class="navbar spnav navbar-expand-lg navbar-dark">
+                <a class="navbar-brand" href="#">
+                    <img src="/assets/RFA.png" src="site logo" id="siteLogo" height="50">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavItems" aria-controls="mainNavItems" aria-label="Show or hide main menu" aria-expanded="false" >
+                    <i class="fa fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse ml-auto" id="mainNavItems">
+                    <div class="ml-auto navbar-nav nav">
+                        <div class="ml-auto navbar-nav nav">
+                            <a class="nav-item nav-link mx-1 active" href="/">
+                                Home
+                            </a> 
+                            <a class="nav-item nav-link mx-lg-2 mx-1" href="/about.html">
+                                About RoommateFinder
+                            </a>
+                            <a class="nav-item nav-link mx-1" href="/profile.html">
+                                Profile
+                            </a>
+                            <a class="nav-item nav-link mx-1" href="/dashboard.html">
+                                Dashboard
+                            </a>
+                            <a class="nav-item nav-link mx-1" href="/support.html">
+                                Support
+                            </a>
+                            <button class="mx-1 btn btn-outline-danger auth-only d-none logout-btn">
+                                Log Out
+                            </button>
+                            <button class="mx-1 btn btn-outline-purple no-auth login-btn" href="#">
+                                Log In
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <footer class="footer pt-3 pb-1 px-3 my-0">
+                <p>
+                    Final Year Project <a href="https://github.com/alex-mous/UW-RoommateFinder" rel="noopener nofollow" target="_blank">View the source code on GitHub!</a>
+                </p>		
+            </footer>
+        </main>
+        <section class="d-none" id="formFloat">
+            <div id="formClose"><i class="fa fa-times"></i></div>
+            <form class="d-none" id="loginForm">
+                <p class="w-100 h3 mb-2 text-center">Login</p>
+                <label class="w-100">
+                    <span class="sr-only">Veritas Email Address (@veritas.edu.ng)</span>
+                    <input class="form-control" type="text" name="email" placeholder="Veritas Email Address (@veritas.edu.ng)">
+                </label>
+                <label class="w-100">
+                    <span class="sr-only">Password</span>
+                    <input class="form-control" type="password" name="password" placeholder="Password">
+                </label>
+                <label class="w-100 mt-1">
+                    <span class="mr-3">Keep me signed in?</span>
+                    <div class="form-check-inline">
+                        <label class="form-check-label mx-2">
+                            <input class="form-check-input" type="radio" name="persist" value="y" checked>
+                            Yes
+                        </label>
+                        <label class="form-check-label mx-2">
+                            <input class="form-check-input" type="radio" name="persist" value="n">
+                            No
+                        </label>
+                    </div>
+                </label>
+                <button class="mt-2 w-100 btn btn-success">Log in!</button>
+                <p class="text-center my-1">Don't have an account? <a class="link" href="#" id="showSignUpLink">Sign up instead</a></p>
+                <p class="text-center my-1">Forgot your password? <a class="link" href="#" id="sendResetEmail">Send a reset email</a></p>
+                <p class="text-center my-3"><span id="loginMsg"></span></p>
+            </form>
+
+            <form class="d-none" id="signupForm">
+                <p class="w-100 h3 mb-2 text-center">Sign up</p>
+                <label class="w-100">
+                    <span class="sr-only">Veritas Email Address (@veritas.edu.ng)</span>
+                    <input class="form-control" type="text" name="email" placeholder="Veritas Email Address (@veritas.edu.ng)">
+                </label>
+                <label class="w-100">
+                    <span class="sr-only">Password</span>
+                    <input class="form-control" type="password" name="password" placeholder="Password">
+                </label>
+                <label class="w-100">
+                    <span class="sr-only">Confirm Password</span>
+                    <input class="form-control" type="password" name="passwordverify" placeholder="Confirm Password">
+                </label>
+                <button class="w-100 btn btn-success">Sign up!</button>
+                <p class="text-center my-1">Already have an account? <a class="link" href="#" id="showLoginLink">Log in instead</a></p>
+                <p class="text-center my-3"><span id="signupMsg"></span></p>
+            </form>
+
+            <form class="d-none" id="resetForm">
+                <p class="w-100 h3 mb-2 text-center">Reset Password</p>
+                <label class="w-100">
+                    <span class="sr-only">Password</span>
+                    <input class="form-control" type="password" name="password" placeholder="Password">
+                </label>
+                <label class="w-100">
+                    <span class="sr-only">Confirm Password</span>
+                    <input class="form-control" type="password" name="passwordverify" placeholder="Confirm Password">
+                </label>
+                <button class="w-100 btn btn-success">Confirm Reset</button>
+                <p class="text-center my-3"><span id="resetMsg"></span></p>
+            </form>
+        </section>
+
+        <script type="application/ld+json">
+            {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "url": "https://roommatefinder.netlify.app",
+            "logo": "https://roommatefinder.netlify.app/assets/icon.svg"
+            }
+        </script>
+
+        <script type="application/ld+json">
+            {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://roommatefinder.netlify.app"
+            }]
+            }
+        </script>
+        <script type="text/javascript" src="/scripts/gotrue.js"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTP9LT2JKC"></script>
+        <script type="text/javascript" src="/scripts/main.js"></script>
+        <script type="text/javascript" src="/scripts/index.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous" async defer></script>
+        
+    </body>
+</html>
